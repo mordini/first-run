@@ -5,6 +5,6 @@
 
 IFS=' ' read -a users <<< getusers
 
-echo ${users[1]}
+echo ${users[4]}
 
 echo 'Choose a user to modify'
