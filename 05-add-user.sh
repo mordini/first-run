@@ -1,6 +1,7 @@
 #!/bin/bash
 
 . function-pause.sh
+. function-install-linuxbrew.sh
 
 function promptUserAdd {
 
@@ -17,6 +18,7 @@ function giveSudo {
     adduser $1 sudo
 }
 
+    
 function addUsers {
 
 	echo 'enter a username'
@@ -32,8 +34,17 @@ function addUsers {
 	    echo 'forget you, then'
 	fi
 
-    echo 'would you like to add another user? y/n'
+	echo 'install linuxbrew for user? y/n (recommended)'
+	read giveLinuxBrew
 
+	if [ $giveLinuxBrew == 'y' ]; then
+	    installLinuxBrew $newUser
+	else
+	    echo 'you may run script (to be added) later to accomplish this'
+	fi
+
+    echo 'would you like to add another user? y/n'
+    
     read addAnotherUser
 
     if [ $addAnotherUser == 'y'  ]; then
