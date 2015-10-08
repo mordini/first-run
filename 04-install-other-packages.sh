@@ -21,4 +21,4 @@ pause
 
 echo 'finished installing other packages'
 
-./05-add-users.sh
+./05-add-user.sh

@@ -15,7 +15,10 @@
 function installLinuxBrew {
 
     userDir=$(eval echo ~$1)
-    echo $userDir
+
+    # add script to customise user experience
+    cp post-first-run.sh $userDir
+    chown $1:$1 $userDir/post-first-run.sh
     
     su - $1 -c 'ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/linuxbrew/go/install)"'
 

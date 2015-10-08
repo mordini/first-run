@@ -1,3 +1,4 @@
+
 #!/bin/bash
 
 . function-pause.sh
@@ -43,7 +44,7 @@ function addUsers {
 	    echo 'you may run script (to be added) later to accomplish this'
 	fi
 
-    echo 'would you like to add another user? y/n'
+	echo 'would you like to add another user? y/n'
     
     read addAnotherUser
 
