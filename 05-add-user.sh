@@ -36,12 +36,14 @@ function addUsers {
 	fi
 
 	echo 'install linuxbrew for user? y/n (recommended)'
-	read giveLinuxBrew
+	read giveLinuxbrew
 
-	if [ $giveLinuxBrew == 'y' ]; then
-	    installLinuxBrew $newUser
+	if [ $giveLinuxbrew == 'y' ]; then
+	    installLinuxbrew $newUser
 	else
-	    echo 'you may run script (to be added) later to accomplish this'
+	    echo 'to install for this user later'
+	    echo 'at the command prompt type:'
+	    echo '# . function-install-linuxbrew.sh; installLinuxbrew' $newUser
 	fi
 
 	echo 'would you like to add another user? y/n'
