@@ -1,4 +1,5 @@
-# -*- mode: gitignore; -*-
+# -*- mode: gitignore; -k**-
+*.bak
 *test*
 *~
 \#*\#
