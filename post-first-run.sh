@@ -13,11 +13,13 @@ echo 'install custom .emacs.d? y/n'
 read instCustEmacs
 
 if [ $instCustEmacs == 'y' ]; then
-    mkdir ~/.emacs.d
-    rm -rf ~/first-run-temp
-    git clone https://github.com/mordini/.emacs.d.git ~/first-run-temp
-    mv ~/first-run-temp/* ~/.emacs.d
-    rm -rf first-run-temp
+    rm -rf ~/.emacs.d
+    git clone https://github.com/mordini/.emacs.d.git
+    #mkdir ~/.emacs.d
+    #rm -rf ~/first-run-temp
+    #git clone https://github.com/mordini/.emacs.d.git ~/first-run-temp
+    #mv ~/first-run-temp/* ~/.emacs.d
+    #rm -rf first-run-temp
 else
     echo 'NYAH!'
 fi
