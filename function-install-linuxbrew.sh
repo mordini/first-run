@@ -12,7 +12,11 @@
 #echo 'Choose users to have Linuxbrew:'
 
 # for now, install on a per-user add basis
-function installLinuxBrew {
+# IF you would like to run this separately from add-user,
+# at command prompt:
+# . function-install-linuxbrew.sh; installLinuxbrew username
+
+function installLinuxbrew {
 
     userDir=$(eval echo ~$1)
 
