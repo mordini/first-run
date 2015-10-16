@@ -2,7 +2,7 @@
 
 . function-pause.sh
 
-pkgs='apache2 checkinstall console-data tmux irssi'
+pkgs='apache2 checkinstall console-data tmux unzip irssi'
 
 # put packages into an array
 IFS=' ' read  -a pkgList <<< $pkgs
