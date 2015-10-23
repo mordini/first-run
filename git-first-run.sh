@@ -1,5 +1,9 @@
 #!/bin/bash
 
+#this script will allow users to create their own git repository
+#and push their personal configurations without a hassle.
+#currently is a placeholder.
+
 #echo # first-run >> README.md
 git init
 git add README.md
