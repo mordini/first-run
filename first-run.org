@@ -1,0 +1,39 @@
+* Tasks: Setup Linux from Starter Scripts (run as root)
+** DONE apt-get update, upgrade
+** TODO remove not used repos 
+** DONE install sudo
+** DONE install linuxbrew essentials, (sudo apt-get install build-essential curl git m4 ruby texinfo libbz2-dev libcurl4-openssl-dev libexpat-dev libncurses-dev zlib1g-dev)
+** DONE install other software (sudo apt-get checkinstall console-data tmux irssi)
+*** more to come as we find more
+** DONE setup new users, prompts, give sudo to?
+** TODO prompt to install linuxbrew for users, retrieve list of users, multiple-select menu?
+*** DONE have set this up as single-user install for now in add-users
+*** will likely make a function to run the install linuxbrew commands as another user.
+*** prompt to run as which user, then call command as runuser -l username -c ./install-linuxbrew (?)
+
+* RUN AS USER (user of choice)
+** DONE install linuxbrew (ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/linuxbrew/go/install)")
+** DONE export paths to .bashrc (unless used git environment? maybe have a 'starting' .bashrc)
+*** DONE export PATH="$HOME/.linuxbrew/bin:$PATH"
+*** DONE export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
+*** DONE export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
+** DONE brew install emacs
+** TODO use git to get user environment? this is probably better than exporting the paths for linuxbrew.
+*** DONE use loadkeys to make Capslock CTRL at this point
+**** CAN ALSO (Debian systems only! tested, go this route, keep an eye on loadkeys in case we want to do this for alt systems)
+**** ------------------------------------------------------------------------------------------------------
+**** edit  /etc/default/keyboard
+**** XKBOPTIONS="ctrl:nocaps"		# Some people prefer "ctrl:swapcaps"
+**** $ sudo dpkg-reconfigure -phigh console-setup
+**** ------------------------------------------------------------------------------------------------------
+** TODO ask if is virtual machine, install guest image if so
+** TODO LAST ACTION: apt-get clean, autoremove
+** TODO add pauses between tasks (maybe prompt user to continue?)
+   
+* CREATE MENU SYSTEM TO RUN ANY TASK
+** TODO menu to perform apt-get update, upgrade
+
+* cleanup, improvements
+** TODO put all sources into one source file, then source that file?
+** TODO create ramdisk option to keep Sdcard alive
+***  http://www.makeuseof.com/tag/extend-life-raspberry-pis-sd-card/
